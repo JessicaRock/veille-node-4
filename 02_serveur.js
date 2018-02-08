@@ -15,7 +15,7 @@ app.get('/formulaire', function (req, res) {
 
 app.get('/membres', (req, res) => {
  fs.readFile( __dirname + "/public/data/" + "adresses.json", 'utf8', function (err, data) {
- console.log( data );
+ //console.log( data );
  let json = JSON.parse(data);
  res.end(transforme_en_tableau(json));
  });
@@ -138,20 +138,21 @@ console.log(data);
 
 const transforme_en_tableau = (collection) =>
 {
-	let elem = {};
 	let chaine = '<table>';
-	for (let elm of collection) {
+	for (elm of collection) {
 
-		for(let p in elem) {
+		chaine += '<tr>';
 
+		for(p in elm) {
+			chaine += '<td>' + p + ' : ' + elm[p] + '</td>';
 		}
 
+		chaine += '</tr>';
 
 	}
 
 	chaine += '</table>';
 	return chaine;
-
 }
 
 
