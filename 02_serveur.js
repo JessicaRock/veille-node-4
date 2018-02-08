@@ -16,8 +16,8 @@ app.get('/formulaire', function (req, res) {
 app.get('/membres', (req, res) => {
  fs.readFile( __dirname + "/public/data/" + "adresses.json", 'utf8', function (err, data) {
  console.log( data );
- transforme_en_tableau(JSON.parse(data));
- res.end( data );
+ let json = JSON.parse(data);
+ res.end(transforme_en_tableau(json));
  });
 })
 
@@ -138,11 +138,11 @@ console.log(data);
 
 const transforme_en_tableau = (collection) =>
 {
-	
+	let elem = {};
 	let chaine = '<table>';
-	for (elm of collection) {
+	for (let elm of collection) {
 
-		for(p in elem) {
+		for(let p in elem) {
 
 		}
 
@@ -156,7 +156,7 @@ const transforme_en_tableau = (collection) =>
 
 
 
-var server = app.listen(8081, function () {
+ var server = app.listen(8081, function () {
  var host = server.address().address
  var port = server.address().port
  
