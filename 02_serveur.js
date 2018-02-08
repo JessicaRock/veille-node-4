@@ -16,6 +16,7 @@ app.get('/formulaire', function (req, res) {
 app.get('/membres', (req, res) => {
  fs.readFile( __dirname + "/public/data/" + "adresses.json", 'utf8', function (err, data) {
  console.log( data );
+ transforme_en_tableau(JSON.parse(data));
  res.end( data );
  });
 })
@@ -59,7 +60,7 @@ fs.readFile( __dirname + "/public/data/" + "adresses.json", 'utf8', function (er
  	console.log('Terminé');
  })
 
- res.end( json );
+ res.end();
  });
 
 
@@ -133,6 +134,25 @@ console.log(data);
 //data = JSON.parse(data);
 //data = JSON.stringify(data);
 //console.log(data);
+
+
+const transforme_en_tableau = (collection) =>
+{
+	
+	let chaine = '<table>';
+	for (elm of collection) {
+
+		for(p in elem) {
+
+		}
+
+
+	}
+
+	chaine += '</table>';
+	return chaine;
+
+}
 
 
 
