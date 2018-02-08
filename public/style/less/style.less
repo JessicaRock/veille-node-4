@@ -1,5 +1,10 @@
+/* Variables Less */
+@rouge : #bd4745;
+@jaune : #FFD148;
+
+
 body {
-	background-color: #FFD148;
+	background-color: @jaune;
 	font-family: 'Open Sans';
 	font-size: 20px;
 	font-weight: bold;
@@ -13,8 +18,8 @@ body {
 		border : 2px solid #000;
 
 		input[type='text'] {
-			border: 2ps solid #FF201C;
-			color: red;
+			border: 2px solid @rouge;
+			color: @rouge;
 		}
 	}
 }
