@@ -1,5 +1,6 @@
 /* Variables Less */
 @rouge : #bd4745;
+@rougeFonce : #872927;
 @jaune : #FFD148;
 
 
@@ -20,6 +21,23 @@ body {
 		input[type='text'] {
 			border: 2px solid @rouge;
 			color: @rouge;
+			padding: 5px;
+			font-size: 18px;
 		}
+
+		input[type='submit'] {
+			border: 2px solid @rouge;
+			background-color: @rouge;
+			color: #fff;
+			font-size: 18px;
+			padding: 10px;
+			transition: all 0.3s;
+			
+			&:hover {
+				border: 2px solid @rougeFonce;
+				background-color: @rougeFonce;
+			}
+		}
+
 	}
 }
